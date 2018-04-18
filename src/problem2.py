@@ -154,10 +154,18 @@ def problem2(n, seq):
       :type seq:  [int]
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # Done: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+    seq_1 = []
 
+    for k in range(len(seq)):
+        if seq[k] < n:
+            seq_1 = seq_1 + [seq[k]]
+        if len(seq_1)== 3:
+            return seq_1
+    if len(seq_1) < 3:
+        return 'Too few'
 
 ###############################################################################
 # Our tests use the following to print error messages in red.

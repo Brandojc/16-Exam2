@@ -29,7 +29,14 @@ def main():
     # Test get_age:
     p1 = Person(9)
     print(p1.get_age())  # Should print 9
-
+    p1.celebrate_birthday()
+    print(p1.get_age())
+    p1.celebrate_birthdays(5)
+    print(p1.get_age())
+    p1.older_person()
+    print(p1.older_person().get_age())
+    p2 =Person(9)
+    print(p2.older_person().get_age())
     # -------------------------------------------------------------------------
     # WRITE MORE CODE HERE AS NEEDED to TEST the code that you write
     #   in the  Person  class.  You are graded only on your implementation of
@@ -44,25 +51,31 @@ class Person(object):
         What comes in:  The Person's age.
         Side effects: Sets instance variables as needed by the other methods.
         """
-        # TODO: Implement and test this method.
+        # Done: Implement and test this method.
+        self.age = age
 
     def get_age(self):
         """ Returns this Person's age. """
-        # TODO: Implement and test this method.
+        # Done: Implement and test this method.
+        return self.age
 
     def celebrate_birthday(self):
         """
         Increments this Person's age.
         ALso prints 'Happy birthday!'.
         """
-        # TODO: Implement and test this method.
+        # Done: Implement and test this method.
+        self.age = self.age + 1
+        print('Happy birthday!')
 
     def celebrate_birthdays(self, n):
         """
         What comes in: A non-negative integer n.
         Side effects:  Calls the  celebrate_birthday  method  n  times.
         """
-        # TODO: Implement and test this method.
+        # Done: Implement and test this method.
+        for k in range(n):
+            self.celebrate_birthday()
 
     def older_person(self):
         """
@@ -70,6 +83,7 @@ class Person(object):
         """
         # TODO: Implement and test this method.
 
+        return Person(self.age *2)
 
 # -----------------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
